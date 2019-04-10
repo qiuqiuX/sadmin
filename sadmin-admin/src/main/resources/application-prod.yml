@@ -1,0 +1,23 @@
+# 生产配置文件
+# 开启 debug 模式
+debug: false
+
+# SERVER 服务器配置
+server:
+  port: 8881
+  address: 0.0.0.0
+
+spring:
+  resources:
+    static-locations: file:/Users/iqiuqiu/coding/Library/static/prod/
+  # DATASOURCE 数据源配置
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/myadmin?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+
+
+custom:
+  resourceUrl: http://localhost:8881
+

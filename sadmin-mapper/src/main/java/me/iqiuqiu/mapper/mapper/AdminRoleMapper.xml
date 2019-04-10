@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="me.iqiuqiu.mapper.mapper.AdminRoleMapper">
+  <resultMap id="BaseResultMap" type="me.iqiuqiu.mapper.model.entity.AdminRole">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="admin_id" jdbcType="INTEGER" property="adminId" />
+    <id column="role_id" jdbcType="INTEGER" property="roleId" />
+  </resultMap>
+
+  <insert id="insertBatch">
+    insert into admin_role(admin_id,role_id)
+    values
+    <foreach collection="list" item="item" index="index" separator=",">
+      (#{item.adminId}, #{item.roleId})
+    </foreach>
+  </insert>
+    <delete id="deleteRolesByAdminId">
+      delete from admin_role where admin_id=#{adminId}
+    </delete>
+  <select id="selectRoleIdsByAdminId" resultType="java.lang.Integer">
+    select role_id from admin_role where admin_id=#{adminId}
+  </select>
+</mapper>

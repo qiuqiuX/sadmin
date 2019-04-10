@@ -1,0 +1,26 @@
+# 开发配置文件
+# 开启 debug 模式
+debug: true
+
+# SERVER 服务器配置
+server:
+  port: 8881
+  address: 0.0.0.0
+
+spring:
+  resources:
+    static-locations: file:${custom.resource-save-path}
+  # DATASOURCE 数据源配置
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/myadmin?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+
+
+custom:
+  resource-url: http://localhost:8881/admin/
+  resource-save-path: /Users/iqiuqiu/coding/Library/static/dev/
+
+
+

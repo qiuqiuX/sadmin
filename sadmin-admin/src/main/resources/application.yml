@@ -1,0 +1,42 @@
+server:
+  port: 8881
+  servlet:
+    session:
+      timeout: 86400
+    context-path: /admin
+#  error:
+#    path: /error
+
+spring:
+  profiles:
+    active: @profile.active@
+  mvc:
+    servlet:
+      load-on-startup: 1
+
+#    static-path-pattern: /**
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    username: root
+#    password: root
+#    url: jdbc:mysql://127.0.0.1:3306/myadmin?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+
+logging:
+  level:
+    me.iqiuqiu: debug
+  path: /Users/iqiuqiu/coding/Library/Log
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: me.iqiuqiu.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+
+
+logging.level.org.springframework.boot.autoconfigure: ERROR
+
+
+
+
+
